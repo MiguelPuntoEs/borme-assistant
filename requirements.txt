@@ -1,0 +1,7 @@
+ipykernel
+ipywidgets
+requests
+langchain-community
+langchain-milvus
+streamlit
+itables
