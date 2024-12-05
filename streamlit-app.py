@@ -4,23 +4,23 @@ from utils import get_prompt, get_context
 from openai import AzureOpenAI
 from utils import generate_embeddings
 from dotenv import load_dotenv
-
+from typing import Final
 
 load_dotenv()
 
 
-SYSTEM_PROMPT = """
+SYSTEM_PROMPT: Final[str] = """
 Human: You are an AI assistant. You are able to find answers to the questions from the contextual passage snippets provided.
 """
 
-DB_URI = './milvus.db'
-COLLECTION_NAME = 'borme'
+DB_URI: Final[str] = './milvus.db'
+COLLECTION_NAME: Final[str] = 'borme'
 
-client = AzureOpenAI(
+client: AzureOpenAI = AzureOpenAI(
     api_version='2024-02-01'
 )
 
-milvus_client = MilvusClient(uri=DB_URI)
+milvus_client: MilvusClient = MilvusClient(uri=DB_URI)
 
 
 if "messages" not in st.session_state:
